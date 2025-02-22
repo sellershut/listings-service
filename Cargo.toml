@@ -1,0 +1,18 @@
+[package]
+name = "listings-service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.96"
+prost = "0.13.5"
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread", "signal"] }
+tonic = "0.12.3"
+
+[dependencies.sellershut-core]
+git = "https://github.com/sellershut/sellershut-core"
+features = ["rpc-server-listings", "serde", "time"]
+
+[dependencies.sellershut-services]
+git = "https://github.com/sellershut/services-lib"
+features = ["api", "postgres", "tracing"]
