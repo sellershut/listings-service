@@ -25,4 +25,4 @@ features = ["rpc-server-listings", "serde", "time"]
 
 [dependencies.sellershut-services]
 git = "https://github.com/sellershut/services-lib"
-features = ["api", "postgres", "tracing"]
+features = ["api", "id-gen", "postgres", "tracing"]

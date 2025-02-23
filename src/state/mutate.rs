@@ -22,7 +22,6 @@ impl MutateListings for AppState {
 
     #[must_use]
     #[tracing::instrument(skip(self), err(Debug))]
-
     async fn upsert_listing(
         &self,
         request: Request<UpsertistingRequest>,

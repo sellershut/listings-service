@@ -12,12 +12,13 @@ pub struct Listing {
     created_at: OffsetDateTime,
     updated_at: OffsetDateTime,
     ap_id: String,
-    active: bool,
     quantity: i32,
     price: f32,
     liked_by: Vec<String>,
     category_ap_id: String,
     status: String,
+    lat: f32,
+    lon: f32,
 }
 
 impl From<Listing> for sellershut_core::listings::Listing {
@@ -32,12 +33,15 @@ impl From<Listing> for sellershut_core::listings::Listing {
             created_at: Some(value.created_at.into()),
             updated_at: Some(value.updated_at.into()),
             ap_id: value.ap_id,
-            active: value.active,
             quantity: value.quantity,
             status: todo!(),
             price: todo!(),
             liked_by: value.liked_by,
             category_ap_id: value.category_ap_id,
+            location: todo!(),
+            city: todo!(),
+            region: todo!(),
+            country: todo!(),
         }
     }
 }
